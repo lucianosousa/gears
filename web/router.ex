@@ -17,6 +17,10 @@ defmodule Gears.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/equipments", EquipmentController
+    resources "/gears", GearController
+
   end
 
   # Other scopes may use custom stacks.

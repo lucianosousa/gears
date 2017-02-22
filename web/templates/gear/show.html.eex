@@ -1,0 +1,23 @@
+<h2>Show gear</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @gear.name %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @gear.brand %>
+  </li>
+
+  <li>
+    <strong>Kilometers:</strong>
+    <%= @gear.kilometers %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: gear_path(@conn, :edit, @gear) %>
+<%= link "Back", to: gear_path(@conn, :index) %>

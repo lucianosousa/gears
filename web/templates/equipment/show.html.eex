@@ -1,0 +1,18 @@
+<h2>Show equipment</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @equipment.name %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @equipment.brand %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: equipment_path(@conn, :edit, @equipment) %>
+<%= link "Back", to: equipment_path(@conn, :index) %>

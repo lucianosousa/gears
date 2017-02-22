@@ -1,0 +1,6 @@
+<h2>Edit gear</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: gear_path(@conn, :update, @gear) %>
+
+<%= link "Back", to: gear_path(@conn, :index) %>

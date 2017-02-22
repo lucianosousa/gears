@@ -1,0 +1,30 @@
+<h2>Listing gears</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Kilometers</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for gear <- @gears do %>
+    <tr>
+      <td><%= gear.name %></td>
+      <td><%= gear.brand %></td>
+      <td><%= gear.kilometers %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: gear_path(@conn, :show, gear), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: gear_path(@conn, :edit, gear), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: gear_path(@conn, :delete, gear), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New gear", to: gear_path(@conn, :new) %>

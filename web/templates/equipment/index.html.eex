@@ -1,0 +1,28 @@
+<h2>Listing equipments</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for equipment <- @equipments do %>
+    <tr>
+      <td><%= equipment.name %></td>
+      <td><%= equipment.brand %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: equipment_path(@conn, :show, equipment), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: equipment_path(@conn, :edit, equipment), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: equipment_path(@conn, :delete, equipment), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New equipment", to: equipment_path(@conn, :new) %>
